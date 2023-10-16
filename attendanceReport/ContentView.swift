@@ -1,0 +1,48 @@
+//
+//  ContentView.swift
+//  testingSwift
+//
+//  Created by Rafael Fernandes da Silva on 10/12/23.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    
+    // the auth class that deals with biometrics
+    // that I created
+    private var authManager = AuthenticationManager()
+    
+    // State variables to handle the alert
+        @State private var showAlert = false
+        @State private var alertMessage = ""
+        @State private var alertTitle = ""
+    
+    var body: some View {
+        VStack {
+            Text("Welcome to attendanceApp!")
+                .padding()
+            
+            Button("Authenticate") {
+                authManager.authenticateUser { success, error in
+                    if success {
+                        alertTitle = "Success"
+                        alertMessage = "Authentication succeeded!"
+                    } else {
+                        alertTitle = "Error"
+                        alertMessage = error?.localizedDescription ?? "An unknown error occurred"
+                    }
+                    showAlert = true
+                }
+            }
+            
+            .alert(isPresented: $showAlert) {
+                            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        }
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+}
