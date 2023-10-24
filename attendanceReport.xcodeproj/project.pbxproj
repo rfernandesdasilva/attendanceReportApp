@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1659C24A2AE8186000636737 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C2492AE8186000636737 /* HomeView.swift */; };
 		16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */; };
-		16F7DB2F2ADDFEB000DE6711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F7DB2E2ADDFEB000DE6711 /* ContentView.swift */; };
 		16F7DB312ADDFEB100DE6711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F7DB302ADDFEB100DE6711 /* Assets.xcassets */; };
 		16F7DB342ADDFEB100DE6711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F7DB332ADDFEB100DE6711 /* Preview Assets.xcassets */; };
 		16F7DB3E2ADDFEB100DE6711 /* attendanceReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F7DB3D2ADDFEB100DE6711 /* attendanceReportTests.swift */; };
@@ -35,9 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1659C2492AE8186000636737 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		16F7DB292ADDFEB000DE6711 /* attendanceReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attendanceReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendanceReportApp.swift; sourceTree = "<group>"; };
-		16F7DB2E2ADDFEB000DE6711 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16F7DB302ADDFEB100DE6711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16F7DB332ADDFEB100DE6711 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16F7DB392ADDFEB100DE6711 /* attendanceReportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = attendanceReportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1659C2482AE8182400636737 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1659C2492AE8186000636737 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		16F7DB202ADDFEB000DE6711 = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +104,9 @@
 		16F7DB2B2ADDFEB000DE6711 /* attendanceReport */ = {
 			isa = PBXGroup;
 			children = (
+				1659C2482AE8182400636737 /* Views */,
 				16F7DB562ADDFF8400DE6711 /* AuthenticationManager.swift */,
 				16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */,
-				16F7DB2E2ADDFEB000DE6711 /* ContentView.swift */,
 				16F7DB302ADDFEB100DE6711 /* Assets.xcassets */,
 				16F7DB322ADDFEB100DE6711 /* Preview Content */,
 			);
@@ -261,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F7DB572ADDFF8400DE6711 /* AuthenticationManager.swift in Sources */,
-				16F7DB2F2ADDFEB000DE6711 /* ContentView.swift in Sources */,
+				1659C24A2AE8186000636737 /* HomeView.swift in Sources */,
 				16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,13 +1,14 @@
 //
-//  ContentView.swift
-//  testingSwift
+//  HomeView.swift
+//  attendanceReport
 //
-//  Created by Rafael Fernandes da Silva on 10/12/23.
+//  Created by Rafael Fernandes da Silva on 10/24/23.
 //
 
+import Foundation
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     
     // the auth class that deals with biometrics
     // that I created
@@ -44,5 +45,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomeView()
 }
+
