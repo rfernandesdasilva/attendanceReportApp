@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161318C02AECABAF00DDD519 /* DayScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161318BF2AECABAF00DDD519 /* DayScheduleView.swift */; };
 		1659C24A2AE8186000636737 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C2492AE8186000636737 /* HomeView.swift */; };
+		1659C24D2AE820B300636737 /* CurrentClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C24C2AE820B300636737 /* CurrentClassesView.swift */; };
+		1659C24F2AE84B5600636737 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C24E2AE84B5600636737 /* ClassesView.swift */; };
+		1659C2512AE85E3100636737 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C2502AE85E3100636737 /* ReportView.swift */; };
+		1659C2542AEAB67B00636737 /* ScheduleDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C2532AEAB67B00636737 /* ScheduleDetailedView.swift */; };
 		16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */; };
 		16F7DB312ADDFEB100DE6711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F7DB302ADDFEB100DE6711 /* Assets.xcassets */; };
 		16F7DB342ADDFEB100DE6711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F7DB332ADDFEB100DE6711 /* Preview Assets.xcassets */; };
@@ -35,7 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1659C2492AE8186000636737 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		161318BF2AECABAF00DDD519 /* DayScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayScheduleView.swift; sourceTree = "<group>"; };
+		1659C2492AE8186000636737 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		1659C24C2AE820B300636737 /* CurrentClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentClassesView.swift; sourceTree = "<group>"; };
+		1659C24E2AE84B5600636737 /* ClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesView.swift; sourceTree = "<group>"; };
+		1659C2502AE85E3100636737 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		1659C2532AEAB67B00636737 /* ScheduleDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailedView.swift; sourceTree = "<group>"; };
 		16F7DB292ADDFEB000DE6711 /* attendanceReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attendanceReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendanceReportApp.swift; sourceTree = "<group>"; };
 		16F7DB302ADDFEB100DE6711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,12 +83,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161318C12AECDD8100DDD519 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1659C2482AE8182400636737 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1659C2492AE8186000636737 /* HomeView.swift */,
+				1659C24B2AE8209A00636737 /* Home */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1659C24B2AE8209A00636737 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1659C2492AE8186000636737 /* HomeView.swift */,
+				1659C24C2AE820B300636737 /* CurrentClassesView.swift */,
+				1659C24E2AE84B5600636737 /* ClassesView.swift */,
+				1659C2502AE85E3100636737 /* ReportView.swift */,
+				1659C2532AEAB67B00636737 /* ScheduleDetailedView.swift */,
+				161318BF2AECABAF00DDD519 /* DayScheduleView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		16F7DB202ADDFEB000DE6711 = {
@@ -104,6 +134,7 @@
 		16F7DB2B2ADDFEB000DE6711 /* attendanceReport */ = {
 			isa = PBXGroup;
 			children = (
+				161318C12AECDD8100DDD519 /* Models */,
 				1659C2482AE8182400636737 /* Views */,
 				16F7DB562ADDFF8400DE6711 /* AuthenticationManager.swift */,
 				16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */,
@@ -268,9 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1659C24F2AE84B5600636737 /* ClassesView.swift in Sources */,
 				16F7DB572ADDFF8400DE6711 /* AuthenticationManager.swift in Sources */,
+				1659C2542AEAB67B00636737 /* ScheduleDetailedView.swift in Sources */,
+				1659C2512AE85E3100636737 /* ReportView.swift in Sources */,
 				1659C24A2AE8186000636737 /* HomeView.swift in Sources */,
 				16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */,
+				161318C02AECABAF00DDD519 /* DayScheduleView.swift in Sources */,
+				1659C24D2AE820B300636737 /* CurrentClassesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"attendanceReport/Preview Content\"";
+				DEVELOPMENT_TEAM = 3T3P9AA855;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "\"We use Face ID for secure authentication into the app\"";
@@ -465,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"attendanceReport/Preview Content\"";
+				DEVELOPMENT_TEAM = 3T3P9AA855;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "\"We use Face ID for secure authentication into the app\"";
