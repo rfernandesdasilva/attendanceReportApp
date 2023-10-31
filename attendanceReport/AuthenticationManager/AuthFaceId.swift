@@ -1,7 +1,7 @@
 // authentication import file that has biometrics
 import LocalAuthentication
 
-class AuthenticationManager {
+class AuthFaceId {
     
     // completion in this method is a "closure" parameter. when completed, it receives
     // a boolean true or false for success and failure, and an error if any is found
@@ -11,7 +11,7 @@ class AuthenticationManager {
         // authentication context
         let context = LAContext()
         
-        // canEvaluatePolicy checks if the device currently has capabilities to access biometrics
+        // canEvaluatePol   icy checks if the device currently has capabilities to access biometrics
         // If the device doesn't support biometrics or if there's another issue (like biometrics being locked out due to too many failed attempts), the method will return false and populate the error variable.
         
         var error: NSError?
@@ -26,7 +26,6 @@ class AuthenticationManager {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 DispatchQueue.main.async {
                     completion(success, authenticationError)
-                    print("Authentication done!")
                 }
             }
         } else {
