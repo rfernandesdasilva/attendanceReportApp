@@ -12,7 +12,6 @@ struct HomeView: View {
     
     // the auth class that deals with biometrics
     // that I created
-    private var authManager = AuthenticationManager()
     
     // State variables to handle the alert
         @State private var showAlert = false
@@ -20,7 +19,7 @@ struct HomeView: View {
         @State private var alertTitle = ""
     
     var body: some View {
-        
+    
         // NavigationStack allows me to show a new view over it
         NavigationStack {
             ScrollView {
