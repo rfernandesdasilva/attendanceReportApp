@@ -76,7 +76,7 @@ struct CurrentClassesView: View {
                                     
                                     classRecord.classOnTimeStudents.append(templateStudentId)
                                     
-                                        APIClassRecord.shared.updateClassRecord(id:templateClassRecordId, classRecord: classRecord) { result in
+                                    apiConnection.updateClassRecord(id: classRecord.classRecordId, classRecord: classRecord) { result in
                                             switch result {
                                             case .success:
                                                 print("Class record updated successfully")

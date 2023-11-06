@@ -11,11 +11,11 @@ struct ClassRecord: Codable {
     
     // this is just to map the swift properties into JSON keys for the API
     enum CodingKeys: String, CodingKey {
-        case classRecordId = "ClassRecordId"
-        case courseId = "CourseId"
-        case recordCreationTime = "RecordCreationTime"
-        case recordClosureTime = "RecordClosureTime"
-        case classOnTimeStudents = "ClassOnTimeStudents"
-        case classLateStudents = "ClassLateStudents"
+        case classRecordId = "classRecordId"
+        case courseId = "courseId"
+        case recordCreationTime = "recordCreationTime"
+        case recordClosureTime = "recordClosureTime"
+        case classOnTimeStudents = "classOnTimeStudents"
+        case classLateStudents = "classLateStudents"
     }
 }

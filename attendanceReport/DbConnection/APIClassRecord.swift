@@ -3,10 +3,11 @@ import Foundation
 class APIClassRecord {
     static let shared = APIClassRecord()
     
+    
     func updateClassRecord(id: String, classRecord: ClassRecord, completion: @escaping (Result<Void, Error>) -> Void) {
-        let endpoint = "http://localhost:7207/api/ClassRecords/\(id)"
-        guard let url = URL(string: endpoint) else {
-            print("Invalid URL")
+        let urlString = "https://localhost:7207/api/ClassRecords/\(id)"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
             return
         }
         
@@ -15,33 +16,48 @@ class APIClassRecord {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
-            let jsonData = try JSONEncoder().encode(classRecord)
+            let encoder = JSONEncoder()
+            let formatter = ISO8601DateFormatter()
+            formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            encoder.dateEncodingStrategy = .custom({ (date, encoder) in
+                var container = encoder.singleValueContainer()
+                let dateString = formatter.string(from: date)
+                try container.encode(dateString)
+            })
+            
+            let jsonData = try encoder.encode(classRecord)
             request.httpBody = jsonData
+            
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print("JSON String: \(jsonString)")
+            }
         } catch {
-            print("Error encoding class record: \(error)")
+            completion(.failure(error))
             return
         }
-        
-        let task = URLSession.shared.dataTask(with: request) { _, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
+            
+            let task = URLSession.shared.dataTask(with: request) { _, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    completion(.failure(NSError(domain: "Invalid response", code: -1, userInfo: nil)))
+                    return
+                }
+                
+                switch httpResponse.statusCode {
+                case 200...299:
+                    completion(.success(()))
+                default:
+                    completion(.failure(NSError(domain: "Server error", code: httpResponse.statusCode, userInfo: nil)))
+                }
             }
             
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
-                return
-            }
-            
-            if httpResponse.statusCode == 204 {
-                completion(.success(()))
-            } else {
-                completion(.failure(NSError(domain: "Server returned status code: \(httpResponse.statusCode)", code: httpResponse.statusCode, userInfo: nil)))
-            }
+            task.resume()
         }
-        
-        task.resume()
-    }
+
     
     // GETS the classRecord from DB
     func getClassRecord(id: String, completionHandler: @escaping (Result<ClassRecord, Error>) -> Void) {
@@ -64,9 +80,25 @@ class APIClassRecord {
                 
                 do {
                     let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .iso8601 // Assuming the dates are in ISO8601 format
+                    
+                    // formatter that deals with converting datime to iso
+                    let formatter = ISO8601DateFormatter()
+                                formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+                                decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+                                    let container = try decoder.singleValueContainer()
+                                    let dateStr = try container.decode(String.self)
+                                    
+                                    if let date = formatter.date(from: dateStr) {
+                                        return date
+                                    } else {
+                                        throw DecodingError.dataCorruptedError(in: container,
+                                                                               debugDescription: "Invalid date format: \(dateStr)")
+                                    }
+                                })
+                    
+                    
                     let classRecord = try decoder.decode(ClassRecord.self, from: data)
-                    completionHandler(.success(classRecord))
+                        completionHandler(.success(classRecord))
                 } catch {
                     completionHandler(.failure(error))
                 }

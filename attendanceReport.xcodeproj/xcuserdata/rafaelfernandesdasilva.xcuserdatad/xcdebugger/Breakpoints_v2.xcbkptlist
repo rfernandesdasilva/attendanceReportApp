@@ -3,4 +3,54 @@
    uuid = "50C4BFB2-7114-4452-8D75-D290BEC92495"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1F0A899-5546-427E-BD46-BEA93218766D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "attendanceReport/DbConnection/APIClassRecord.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "APIClassRecord"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D1F0A899-5546-427E-BD46-BEA93218766D - bf687ee3144c7315"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in attendanceReport.APIClassRecord.updateClassRecord(id: Swift.String, classRecord: attendanceReport.ClassRecord, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "attendanceReport"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelfernandesdasilva/Desktop/fullsail/attendanceReport/attendanceReport/DbConnection/APIClassRecord.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "D1F0A899-5546-427E-BD46-BEA93218766D - bf687ee3144c7315"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in attendanceReport.APIClassRecord.updateClassRecord(id: Swift.String, classRecord: attendanceReport.ClassRecord, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "attendanceReport"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelfernandesdasilva/Desktop/fullsail/attendanceReport/attendanceReport/DbConnection/APIClassRecord.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

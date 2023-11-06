@@ -39,7 +39,7 @@ struct HomeView: View {
                      }
                      } */
                     
-                }//.padding() // very important to visuals
+                } //.padding() // very important to visuals
             }
         }
         
