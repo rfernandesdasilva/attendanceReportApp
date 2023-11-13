@@ -12,7 +12,10 @@
 		1659C24D2AE820B300636737 /* CurrentClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C24C2AE820B300636737 /* CurrentClassesView.swift */; };
 		1659C24F2AE84B5600636737 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C24E2AE84B5600636737 /* ClassesView.swift */; };
 		1659C2512AE85E3100636737 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C2502AE85E3100636737 /* ReportView.swift */; };
-		1659C2542AEAB67B00636737 /* ScheduleDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659C2532AEAB67B00636737 /* ScheduleDetailedView.swift */; };
+		165EED3D2B01E7BC00560B67 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED3C2B01E7BC00560B67 /* LoginView.swift */; };
+		165EED3F2B01E97F00560B67 /* APILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED3E2B01E97F00560B67 /* APILogin.swift */; };
+		165EED412B01EA5D00560B67 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED402B01EA5D00560B67 /* CreateAccountView.swift */; };
+		165EED432B01ECBD00560B67 /* APICreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED422B01ECBD00560B67 /* APICreateAccount.swift */; };
 		16AD209D2AF09680004AB821 /* AuthFaceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD209C2AF09680004AB821 /* AuthFaceId.swift */; };
 		16AD20A02AF09ABD004AB821 /* APIClassRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD209F2AF09ABD004AB821 /* APIClassRecord.swift */; };
 		16AD20A22AF0A490004AB821 /* ClassRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD20A12AF0A490004AB821 /* ClassRecord.swift */; };
@@ -47,7 +50,10 @@
 		1659C24C2AE820B300636737 /* CurrentClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentClassesView.swift; sourceTree = "<group>"; };
 		1659C24E2AE84B5600636737 /* ClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesView.swift; sourceTree = "<group>"; };
 		1659C2502AE85E3100636737 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
-		1659C2532AEAB67B00636737 /* ScheduleDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailedView.swift; sourceTree = "<group>"; };
+		165EED3C2B01E7BC00560B67 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		165EED3E2B01E97F00560B67 /* APILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogin.swift; sourceTree = "<group>"; };
+		165EED402B01EA5D00560B67 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		165EED422B01ECBD00560B67 /* APICreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICreateAccount.swift; sourceTree = "<group>"; };
 		16AD209C2AF09680004AB821 /* AuthFaceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFaceId.swift; sourceTree = "<group>"; };
 		16AD209E2AF096D6004AB821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16AD209F2AF09ABD004AB821 /* APIClassRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClassRecord.swift; sourceTree = "<group>"; };
@@ -111,8 +117,9 @@
 				1659C24C2AE820B300636737 /* CurrentClassesView.swift */,
 				1659C24E2AE84B5600636737 /* ClassesView.swift */,
 				1659C2502AE85E3100636737 /* ReportView.swift */,
-				1659C2532AEAB67B00636737 /* ScheduleDetailedView.swift */,
 				161318BF2AECABAF00DDD519 /* DayScheduleView.swift */,
+				165EED3C2B01E7BC00560B67 /* LoginView.swift */,
+				165EED402B01EA5D00560B67 /* CreateAccountView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				16AD209F2AF09ABD004AB821 /* APIClassRecord.swift */,
+				165EED3E2B01E97F00560B67 /* APILogin.swift */,
+				165EED422B01ECBD00560B67 /* APICreateAccount.swift */,
 			);
 			path = DbConnection;
 			sourceTree = "<group>";
@@ -323,16 +332,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165EED3F2B01E97F00560B67 /* APILogin.swift in Sources */,
 				1659C24F2AE84B5600636737 /* ClassesView.swift in Sources */,
-				1659C2542AEAB67B00636737 /* ScheduleDetailedView.swift in Sources */,
 				1659C2512AE85E3100636737 /* ReportView.swift in Sources */,
 				1659C24A2AE8186000636737 /* HomeView.swift in Sources */,
 				16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */,
+				165EED412B01EA5D00560B67 /* CreateAccountView.swift in Sources */,
 				16AD20A22AF0A490004AB821 /* ClassRecord.swift in Sources */,
 				16AD209D2AF09680004AB821 /* AuthFaceId.swift in Sources */,
 				16AD20A02AF09ABD004AB821 /* APIClassRecord.swift in Sources */,
+				165EED3D2B01E7BC00560B67 /* LoginView.swift in Sources */,
 				161318C02AECABAF00DDD519 /* DayScheduleView.swift in Sources */,
 				1659C24D2AE820B300636737 /* CurrentClassesView.swift in Sources */,
+				165EED432B01ECBD00560B67 /* APICreateAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
