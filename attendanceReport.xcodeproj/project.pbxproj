@@ -19,6 +19,12 @@
 		16AD209D2AF09680004AB821 /* AuthFaceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD209C2AF09680004AB821 /* AuthFaceId.swift */; };
 		16AD20A02AF09ABD004AB821 /* APIClassRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD209F2AF09ABD004AB821 /* APIClassRecord.swift */; };
 		16AD20A22AF0A490004AB821 /* ClassRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD20A12AF0A490004AB821 /* ClassRecord.swift */; };
+		16BE153D2B02FB1600CD3B12 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE153C2B02FB1600CD3B12 /* Student.swift */; };
+		16BE153F2B02FB5A00CD3B12 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE153E2B02FB5A00CD3B12 /* User.swift */; };
+		16BE15412B0B16FD00CD3B12 /* StudentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE15402B0B16FD00CD3B12 /* StudentViewModel.swift */; };
+		16BE15432B0B1B3300CD3B12 /* APICourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE15422B0B1B3300CD3B12 /* APICourses.swift */; };
+		16BE15452B0B1BE600CD3B12 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE15442B0B1BE600CD3B12 /* Course.swift */; };
+		16BE15472B0B1E3100CD3B12 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE15462B0B1E3100CD3B12 /* CoursesViewModel.swift */; };
 		16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */; };
 		16F7DB312ADDFEB100DE6711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F7DB302ADDFEB100DE6711 /* Assets.xcassets */; };
 		16F7DB342ADDFEB100DE6711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F7DB332ADDFEB100DE6711 /* Preview Assets.xcassets */; };
@@ -58,6 +64,12 @@
 		16AD209E2AF096D6004AB821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16AD209F2AF09ABD004AB821 /* APIClassRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClassRecord.swift; sourceTree = "<group>"; };
 		16AD20A12AF0A490004AB821 /* ClassRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRecord.swift; sourceTree = "<group>"; };
+		16BE153C2B02FB1600CD3B12 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		16BE153E2B02FB5A00CD3B12 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16BE15402B0B16FD00CD3B12 /* StudentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModel.swift; sourceTree = "<group>"; };
+		16BE15422B0B1B3300CD3B12 /* APICourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICourses.swift; sourceTree = "<group>"; };
+		16BE15442B0B1BE600CD3B12 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		16BE15462B0B1E3100CD3B12 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		16F7DB292ADDFEB000DE6711 /* attendanceReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = attendanceReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F7DB2C2ADDFEB000DE6711 /* attendanceReportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendanceReportApp.swift; sourceTree = "<group>"; };
 		16F7DB302ADDFEB100DE6711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				16AD20A12AF0A490004AB821 /* ClassRecord.swift */,
+				16BE15442B0B1BE600CD3B12 /* Course.swift */,
+				16BE153C2B02FB1600CD3B12 /* Student.swift */,
+				16BE153E2B02FB5A00CD3B12 /* User.swift */,
+				16BE15402B0B16FD00CD3B12 /* StudentViewModel.swift */,
+				16BE15462B0B1E3100CD3B12 /* CoursesViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +147,7 @@
 				16AD209F2AF09ABD004AB821 /* APIClassRecord.swift */,
 				165EED3E2B01E97F00560B67 /* APILogin.swift */,
 				165EED422B01ECBD00560B67 /* APICreateAccount.swift */,
+				16BE15422B0B1B3300CD3B12 /* APICourses.swift */,
 			);
 			path = DbConnection;
 			sourceTree = "<group>";
@@ -332,16 +350,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BE15452B0B1BE600CD3B12 /* Course.swift in Sources */,
 				165EED3F2B01E97F00560B67 /* APILogin.swift in Sources */,
 				1659C24F2AE84B5600636737 /* ClassesView.swift in Sources */,
 				1659C2512AE85E3100636737 /* ReportView.swift in Sources */,
 				1659C24A2AE8186000636737 /* HomeView.swift in Sources */,
+				16BE15412B0B16FD00CD3B12 /* StudentViewModel.swift in Sources */,
 				16F7DB2D2ADDFEB000DE6711 /* attendanceReportApp.swift in Sources */,
+				16BE153D2B02FB1600CD3B12 /* Student.swift in Sources */,
 				165EED412B01EA5D00560B67 /* CreateAccountView.swift in Sources */,
 				16AD20A22AF0A490004AB821 /* ClassRecord.swift in Sources */,
+				16BE15472B0B1E3100CD3B12 /* CoursesViewModel.swift in Sources */,
+				16BE153F2B02FB5A00CD3B12 /* User.swift in Sources */,
 				16AD209D2AF09680004AB821 /* AuthFaceId.swift in Sources */,
 				16AD20A02AF09ABD004AB821 /* APIClassRecord.swift in Sources */,
 				165EED3D2B01E7BC00560B67 /* LoginView.swift in Sources */,
+				16BE15432B0B1B3300CD3B12 /* APICourses.swift in Sources */,
 				161318C02AECABAF00DDD519 /* DayScheduleView.swift in Sources */,
 				1659C24D2AE820B300636737 /* CurrentClassesView.swift in Sources */,
 				165EED432B01ECBD00560B67 /* APICreateAccount.swift in Sources */,

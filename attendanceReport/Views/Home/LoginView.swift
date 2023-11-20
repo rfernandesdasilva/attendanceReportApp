@@ -1,10 +1,16 @@
 import SwiftUI
 
+
 struct LoginView: View {
     
     @Binding var authSuccessful : Bool
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var showingLoginFailedAlert = false
+    
+    @ObservedObject var studentViewModel: StudentViewModel // shared data
+    
+    private let apiConnection = APILogin()
 
     var body: some View {
         NavigationView {
@@ -30,6 +36,9 @@ struct LoginView: View {
                         .cornerRadius(10)
                 }
                 .padding()
+                .alert(isPresented: $showingLoginFailedAlert) {
+                    Alert(title: Text("Login Failed"), message: Text("Please check your credentials and try again."), dismissButton: .default(Text("OK")))
+                }
                 
                 NavigationLink(destination: CreateAccountView()) {
                                     Text("Create account")
@@ -41,15 +50,22 @@ struct LoginView: View {
     }
 
     func loginAction() {
-        // Implement your login logic here
-        print("Username: \(username), Password: \(password)")
-        authSuccessful = true
+        studentViewModel.authenticateUser(userEmail: username.lowercased(), userPassword: password) { success in
+            if success {
+                authSuccessful = true
+            } else {
+                showingLoginFailedAlert = true
+            }
+        }
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         @State var authSuccessful = false
-        LoginView(authSuccessful: $authSuccessful)
+        let studentViewModel = StudentViewModel()
+        LoginView(authSuccessful: $authSuccessful, studentViewModel: studentViewModel) // pass it to LoginView
     }
 }
+

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct attendanceReportApp: App {
+    @StateObject var studentViewModel = StudentViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(studentViewModel: studentViewModel)
         }
     }
 }

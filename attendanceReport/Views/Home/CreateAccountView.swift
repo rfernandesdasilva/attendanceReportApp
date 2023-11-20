@@ -6,6 +6,9 @@ struct CreateAccountView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
+    
+    
+    private let apiConnection = APICreateAccount()
 
     var body: some View {
         NavigationView {
@@ -45,17 +48,46 @@ struct CreateAccountView: View {
                         .cornerRadius(10)
                 }
                 .padding()
-
-                
             }
             .padding()
-            
         }
     }
 
     func createAccountAction() {
         // Implement your account creation logic here
         print("Name: \($firstName), Name: \($lastName), Email: \(email), Password: \(password), Confirm Password: \(confirmPassword)")
+        
+        // create student here to send to createStudent
+        let newUser = User(userEmail: email, userPassword: password)
+        
+        var devices: [String] = []
+        
+        if let deviceID = UIDevice.current.identifierForVendor?.uuidString {
+            devices.append(deviceID)
+        } else {
+            // Handle the case where the device ID couldn't be retrieved
+            print("Device ID could not be retrieved")
+        }
+        
+        let newStudent = Student(userId: generateHexadecimalString(length: 24), studentFirstName: firstName, studentLastName: lastName, enrolledClasses: [], user: newUser, authorizedDevices: devices)
+        
+        apiConnection.createStudent(student: newStudent) { result in
+            switch result {
+            case .success:
+                print("Account created successfully")
+                // Handle success, such as updating authSuccessful state or navigating to another view
+                
+            case .failure(let error):
+                print("Error creating account: \(error)")
+                // Handle failure, such as showing an error message to the user
+            }
+        }
+    }
+
+    
+    func generateHexadecimalString(length: Int) -> String {
+        let letters = "0123456789abcdef"
+        return String((0..<length).map{ _ in letters.randomElement()! })
     }
 }
 
