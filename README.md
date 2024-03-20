@@ -14,6 +14,6 @@ The project is designed highly configurable, which would be beneficial for the i
 # Technologies:
 xCode, Swift iOS, Certificate, web-API connection
 
-#Future implementations
+# Future implementations
 - QRCode Attendance
 - Email Services
